@@ -3,11 +3,36 @@ package com.tsswebapps.todolist.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+@Table(name = "todos")
 public class Todo {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(length = 100)
 	private String descricao;
+	
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private LocalDateTime dataHoraMarcada;
+	
+	@Enumerated(EnumType.STRING)
 	private Categorias categoria;
+	
+	@Enumerated(EnumType.STRING)
 	private Situacao situacao;
 
 	public Long getId() {
