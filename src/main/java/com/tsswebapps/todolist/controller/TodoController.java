@@ -22,4 +22,10 @@ public class TodoController {
 		ModelAndView mv = new ModelAndView("index");
 		return mv;
 	}
+	
+	@GetMapping("/cadastrar")
+	public ModelAndView cadastrar() {
+		ModelAndView mv = new ModelAndView("cadastro");
+		return mv;
+	}
 }
