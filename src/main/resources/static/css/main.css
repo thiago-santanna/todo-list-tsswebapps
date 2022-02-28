@@ -2,30 +2,12 @@
 
 body {
 	background:  no-repeat url("/images/background.jpg") ;
-	background-position: -150px -400px;
+	background-position: -60px -400px;
 }
 
 .container {
 	max-width: 800px;
 	margin-left: 4rem;
 	height: 100vh;
-}
-
-.sidebar{
-	border-right: 1px solid #b5babb;
-}
-
-.todo-container{
-	height: 100%;
-}
-
-.category-title {
-	height: 30%;
-}
-
-.todo-list {
-	height: 70%;
-	border-top: 1px solid #b5babb;
-}
-
-	
+	background-color: #fff;
+}	

@@ -8,44 +8,37 @@
 </head>
 <body>
 	<main class="container">
-		<div class="row h-100">
-			<div class="sidebar col col-md-4 d-flex flex-column p-3">
-				<span>Tarefas e compromissos</span>
-				<hr>
-				<ul class="nav nav-pills d-flex flex-column mb-auto">
-					<li class="nav-item">
-						<a href="#" class="nav-link active"	aria-current="page">
-							Home
-						</a>
-					</li>
-				</ul>
-			</div>
-			
-			<div class="content col col-md-8 p-3">
-				<div class="grid todo-container" style="--bs-columns: 3;">
-					<div class="category-title">
-						<h2>Titulo da categoria</h2>
-						<span>Segunda-feira, 27 de fevereiro</span>
-					</div>
-					<div class="todo-list">
-						<h2>Lista de tarefas</h2>
-						<ul>
-							<li>
-								<div class="d-flex ">
-									<input type="radio" />
-									<div>
-										<span>Descricao</span>
-										<span>Categoria</span>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
+		<div class="content">
+			<aside class="side">
+				<nav class="nav flex-column">
+				  <a class="nav-link" href="#">Meu dia</a>
+				  <a class="nav-link" href="#">Urgente</a>
+				  <a class="nav-link" href="#">Tarefa</a>
+				  <a class="nav-link" href="#">Lazer</a>
+				  <a class="nav-link" href="#">Família</a>
+				  <a class="nav-link" href="#">Trabalho</a>
+				</nav>
+			</aside>
+			<section class="todo-detail">
+				<div>
+					<section class="todo-title">
+						<div class="d-flex flex-column">
+							<span>Meu dia</span>
+							<span>Segunda-feira, Fevereiro 28</span>
+						</div>
+					</section>
+					<section class="todo-resume">
+						<div>
+							<input type="radio" >
+							<div>
+								<span>Titulo todo</span>
+								<p>Descricao do todo</p>
+							</div>
+						</div>
+					</section>
 				</div>
-			</div>
-		</div>
-		 
-	 	
+			</section>
+		</div>	 	
 	</main>
 	
 	<script src="/js/bootstrap/js/bootstrap.min.js"></script>
