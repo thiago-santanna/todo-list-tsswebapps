@@ -2,12 +2,10 @@
 
 body {
 	background:  no-repeat url("/images/background.jpg") ;
-	background-position: -60px -400px;
+	background-position: -10px -400px;
 }
 
 .container {
 	max-width: 800px;
-	margin-left: 4rem;
 	height: 100vh;
-	background-color: #fff;
 }	
