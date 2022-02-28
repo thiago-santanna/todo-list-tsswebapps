@@ -5,9 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tsswebapps.todolist.service.TodoService;
+
 @Controller
 @RequestMapping("todo-list")
 public class TodoController {
+	
+	private TodoService service;
+	
+	public TodoController(TodoService todoService) {
+		this.service = todoService;
+	}
 
 	@GetMapping("/resumo")
 	public ModelAndView index() {

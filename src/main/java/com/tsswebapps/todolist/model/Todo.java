@@ -1,6 +1,6 @@
 package com.tsswebapps.todolist.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -25,7 +25,7 @@ public class Todo {
 	private String descricao;
 	
 	@DateTimeFormat(pattern = "dd-MM-yyyy")
-	private LocalDateTime dataHoraMarcada;
+	private LocalDate dataHoraMarcada;
 	
 	@Enumerated(EnumType.STRING)
 	private Categorias categoria;
@@ -49,11 +49,11 @@ public class Todo {
 		this.descricao = descricao;
 	}
 
-	public LocalDateTime getDataHoraMarcada() {
+	public LocalDate getDataHoraMarcada() {
 		return dataHoraMarcada;
 	}
 
-	public void setDataHoraMarcada(LocalDateTime dataHoraMarcada) {
+	public void setDataHoraMarcada(LocalDate dataHoraMarcada) {
 		this.dataHoraMarcada = dataHoraMarcada;
 	}
 
