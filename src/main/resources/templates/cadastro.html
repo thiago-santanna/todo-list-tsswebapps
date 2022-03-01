@@ -9,27 +9,38 @@
 </head>
 <body>
 	<main class="container-fluid p-3">
-		<form action="" method="post">
-			<div>
-				<label>Descricao</label>
-				<input type="text">
-			</div>
+		<div class="card" style="width: 18rem;">
+			<div class="card-header">Featured</div>
 			
-			<div>
-				<label>Data</label>
-				<input type="date">
-			</div>
 			
-			<div>
-				<label>Categoria</label>
-				<select>
-					<option>Categorias</option>
-					<option>Categorias</option>
-					<option>Categorias</option>
-					<option>Categorias</option>
-				</select>
-			</div>
-		</form>
+			<form action="/salvar" method="post">
+				<div class="mb-3 form-group">
+					<label class="form-label" for="inputDescricao">Descricao</label> <input
+						class="form-control" type="text" id="inputDescricao">
+					<div class="form-text" id="emailHelp">Digite uma descrição de
+						sua tarefa/compromisso.</div>
+				</div>
+	
+				<div class="mb-3 form-group">
+					<label for="inputData" class="form-label">Descricao</label> <input
+						type="date" class="form-control" id="inputData">
+					<div id="emailHelp" class="form-text">Digite uma data para
+						esse evento.</div>
+				</div>
+	
+				<div class="mb-3 form-group">
+					<label>Categoria</label> <select class="form-select">
+						<option selected>Abra e selecione uma opção</option>
+						<option value="Urgente">Urgente</option>
+						<option value="Tarefa">Tarefa</option>
+						<option value="Lazer">Lazer</option>
+						<option value="Família">Família</option>
+						<option value="Trabalho">Trabalho</option>
+					</select>
+				</div>
+			</form>
+		</div>
+
 	</main>
 
 	<script src="/js/bootstrap/js/bootstrap.min.js"></script>
