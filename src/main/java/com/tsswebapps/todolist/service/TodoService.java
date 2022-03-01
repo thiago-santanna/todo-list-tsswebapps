@@ -19,4 +19,8 @@ public class TodoService {
 		return null;
 	}
 	
+	public Todo salvar(Todo todo) {
+		return repository.save(todo);
+	}
+	
 }

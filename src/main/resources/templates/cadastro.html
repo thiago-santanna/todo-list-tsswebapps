@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -22,30 +22,30 @@
 	            </a>
 			</div>
 			<div class="card-body">
-				<form action="/todo/cadastrar" method="post">
+				<form action="/todo/salvar" method="post">
 					<div class="mb-3 form-group">
-						<label class="form-label" for="inputDescricao">Descricao</label> 
-						<input class="form-control" type="text" id="inputDescricao">
+						<label class="form-label" for="descricao">Descricao</label> 
+						<input class="form-control" type="text" id="descricao" name="descricao">
 						<div class="form-text" id="emailHelp">
 							Digite uma descrição de	sua tarefa/compromisso.
 						</div>
 					</div>
 		
 					<div class="mb-3 form-group">
-						<label for="inputData" class="form-label">Descricao</label> <input
-							type="date" class="form-control" id="inputData">
-						<div id="emailHelp" class="form-text">Digite uma data para
+						<label for="dataHoraMarcada" class="form-label">Data da tarefa</label> 
+						<input type="date" class="form-control" id="inputData" name="dataHoraMarcada">
+						<div id="dataHoraMarcada" class="form-text">Digite uma data para
 							esse evento.</div>
 					</div>
 		
 					<div class="mb-3 form-group">
-						<label>Categoria</label> <select class="form-select">
+						<label for="categoria" class="form-label">Categoria</label> 
+						<select class="form-select" name="categoria" id="categoria">
 							<option selected>Abra e selecione uma opção</option>
-							<option value="Urgente">Urgente</option>
-							<option value="Tarefa">Tarefa</option>
-							<option value="Lazer">Lazer</option>
-							<option value="Família">Família</option>
-							<option value="Trabalho">Trabalho</option>
+							<option value="URGENTE">Urgente</option>
+							<option value="TAREFA">Tarefa</option>
+LAZER							<option value="FAMILIA">Família</option>
+							<option value="TRABALHO">Trabalho</option>
 						</select>
 					</div>
 					
