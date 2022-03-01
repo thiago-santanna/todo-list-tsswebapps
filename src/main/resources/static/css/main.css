@@ -3,13 +3,15 @@
 body {
 	background:  no-repeat url("/images/background.jpg") ;
 	background-position: -10px -400px;
+	
 }
 
-.container {
+.container-fluid {
 	max-width: 800px;
 	height: 100vh;
-}	
+	margin-top: 5rem;	
+}
 
-/* #btn-salvar {
-	padding: 8px 80px;
-} */
+.card {
+	border-radius: 1rem;
+}

@@ -10,9 +10,9 @@
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-	<main class="container-fluid p-3">
-		<div class="content h-100 row mt-4">
-			<aside class="categories col-sm-3">
+	<main class="container">
+		<div class="content h-100 mt-4">
+			<aside class="categories">
 				<nav class="d-flex flex-column">
 					<div class="nav-link d-flex justify-content-between gap-3">
 						<img alt="icone" src="#">
@@ -51,7 +51,13 @@
 					</div>						
 				</nav>
 			</aside>
-			<section class="todo-detail col-sm-9">
+			
+			<div class="card">
+				<div class="card-header d-flex justify-content-between align-items-center">
+					<span class="text-primary">Resumo</span>
+				</div>
+				
+				<section class="todo-detail col-sm-9">
 				<div class="d-flex flex-column gap-4">
 					<section class="todo-title mb-4">
 						<div class="d-flex flex-column">
@@ -96,6 +102,10 @@
 					<span>+ Adicionar uma tarefa</span>
 				</div>
 			</section>
+			</div>
+			
+			
+			
 		</div>	 	
 	</main>
 	
