@@ -2,43 +2,51 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 <title>Cadastro de Tarefa</title>
 <link rel="stylesheet" type="text/css"
 	href="/css/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-	<main class="container-fluid p-3">
-		<div class="card" style="width: 18rem;">
-			<div class="card-header">Featured</div>
-			
-			
-			<form action="/salvar" method="post">
-				<div class="mb-3 form-group">
-					<label class="form-label" for="inputDescricao">Descricao</label> <input
-						class="form-control" type="text" id="inputDescricao">
-					<div class="form-text" id="emailHelp">Digite uma descrição de
-						sua tarefa/compromisso.</div>
-				</div>
-	
-				<div class="mb-3 form-group">
-					<label for="inputData" class="form-label">Descricao</label> <input
-						type="date" class="form-control" id="inputData">
-					<div id="emailHelp" class="form-text">Digite uma data para
-						esse evento.</div>
-				</div>
-	
-				<div class="mb-3 form-group">
-					<label>Categoria</label> <select class="form-select">
-						<option selected>Abra e selecione uma opção</option>
-						<option value="Urgente">Urgente</option>
-						<option value="Tarefa">Tarefa</option>
-						<option value="Lazer">Lazer</option>
-						<option value="Família">Família</option>
-						<option value="Trabalho">Trabalho</option>
-					</select>
-				</div>
-			</form>
+	<main class="container-fluid">
+		<div class="card col-sm-6 mt-3">
+			<div class="card-header">Cadastre sua tarefa</div>
+			<div class="card-body">
+				<form action="/salvar" method="post">
+					<div class="mb-3 form-group">
+						<label class="form-label" for="inputDescricao">Descricao</label> <input
+							class="form-control" type="text" id="inputDescricao">
+						<div class="form-text" id="emailHelp">Digite uma descrição de
+							sua tarefa/compromisso.</div>
+					</div>
+		
+					<div class="mb-3 form-group">
+						<label for="inputData" class="form-label">Descricao</label> <input
+							type="date" class="form-control" id="inputData">
+						<div id="emailHelp" class="form-text">Digite uma data para
+							esse evento.</div>
+					</div>
+		
+					<div class="mb-3 form-group">
+						<label>Categoria</label> <select class="form-select">
+							<option selected>Abra e selecione uma opção</option>
+							<option value="Urgente">Urgente</option>
+							<option value="Tarefa">Tarefa</option>
+							<option value="Lazer">Lazer</option>
+							<option value="Família">Família</option>
+							<option value="Trabalho">Trabalho</option>
+						</select>
+					</div>
+					
+					<div class="d-grid gap-2">
+						<button class="btn btn-primary btn-lg" type="submit" id="btn-salvar">
+							Salvar
+						</button>
+					</div>					
+				</form>		
+			</div>
 		</div>
 
 	</main>

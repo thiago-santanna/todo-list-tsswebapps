@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tsswebapps.todolist.service.TodoService;
 
 @Controller
-@RequestMapping("todo-list")
+@RequestMapping("todo")
 public class TodoController {
 	
 	private TodoService service;
