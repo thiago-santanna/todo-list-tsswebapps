@@ -14,50 +14,50 @@
 		<div class="row content">
 			<section class="col-12 col-sm-4">
 				<div class="list-group gap-2">
-				  <a href="/todo/category/todas" class="list-group-item list-group-item-action active" aria-current="true">
+				  <a href="/" class="list-group-item list-group-item-action active" aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Meu dia</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/sun.svg">
+				      <img class="btn" alt="urgente" src="/images/sun.svg">
 				    </div>
 				    <p class="mb-1">Tarefas do dia</p>
 				  </a>
 				  
-				  <a href="/todo/category/urgente" class="list-group-item list-group-item-action" aria-current="true">
+				  <a href="/category/urgente" class="list-group-item list-group-item-action" aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Urgente</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/patch-exclamation.svg">
+				      <img class="btn" alt="urgente" src="/images/patch-exclamation.svg">
 				    </div>
 				    <p class="mb-1">Consulta médica, comprar remédios...</p>
 				  </a>				  
 				  
-				  <a href="/todo/category/tarefa" class="list-group-item list-group-item-action " aria-current="true">
+				  <a href="/category/tarefa" class="list-group-item list-group-item-action " aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Tarefa</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/card-checklist.svg">
+				      <img class="btn" alt="urgente" src="/images/card-checklist.svg">
 				    </div>
 				    <p class="mb-1">(Jogar lixo fora, sair com o pet...).</p>
 				  </a>
 				  
-				  <a href="/todo/category/lazer" class="list-group-item list-group-item-action " aria-current="true">
+				  <a href="/category/lazer" class="list-group-item list-group-item-action " aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Lazer</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/controller.svg">
+				      <img class="btn" alt="urgente" src="/images/controller.svg">
 				    </div>
 				    <p class="mb-1">Jogar CS, Praia, Show...</p>
 				  </a>
 				  
-				  <a href="/todo/category/familia" class="list-group-item list-group-item-action " aria-current="true">
+				  <a href="/category/familia" class="list-group-item list-group-item-action " aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Família</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/chat-square-heart.svg">
+				      <img class="btn" alt="urgente" src="/images/chat-square-heart.svg">
 				    </div>
 				    <p class="mb-1">Almoço na sogra, Parque com as crianças...</p>
 				  </a>
 				  
-				  <a href="/todo/category/trabalho" class="list-group-item list-group-item-action " aria-current="true">
+				  <a href="/category/trabalho" class="list-group-item list-group-item-action " aria-current="true">
 				    <div class="d-flex w-100 justify-content-between">
 				      <h5 class="mb-1">Trabalho</h5>
-				      <img class="img-thumbnail" alt="urgente" src="/images/cash-coin.svg">
+				      <img class="btn" alt="urgente" src="/images/cash-coin.svg">
 				    </div>
 				    <p class="mb-1">Entregar, Reunião, Ligar pro líder...</p>
 				  </a>
@@ -69,7 +69,7 @@
 				    <h4>Nome Categoria selecionada</h4>
 				    <h5>02/02/2022</h5>
 				  </div>
-				  <div class="card-body">
+				  <div class="card-body" >
 				    <div class="d-flex flex-wrap justify-content-between bg-secondary p-3 rounded bg-opacity-25">
 				    	<input type="text" placeholder="Descrição">
 				    	<input type="date">
@@ -82,14 +82,14 @@
 					    	<img alt="urgente" src="/images/search.svg"> 
 					    </a>
 				    </div>
-				    <table class="table table-hover  table-responsive">
+				    <table class="table table-hover  table-responsive" th:unless="${#lists.isEmpty(selecaoTodos)}">
 						<thead>
 						    <tr>
-						      <th scope="col">ID</th>
+						      <th scope="col">#</th>
 						      <th scope="col">Descrição</th>
 						      <th scope="col">Data</th>
 						      <th scope="col">Situação</th>
-						      <th scope="col">#</th>
+						      <th scope="col"></th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -100,46 +100,12 @@
 						      <td>Pendente</td>
 						      <td> <span>Edit</span><span>Erase</span> </td>
 						    </tr>
-						    <tr>
-							  <th scope="row">2</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
-						    </tr>
-						    <tr>
-							  <th scope="row">2</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
-						    </tr>
+						   
 						  </tbody>					  
 					</table>
-				    <div class="card-footer p-0">
-					    <a href="todo/cadastrar" class="btn btn-primary">
-					    	<img class="img-thumbnail " alt="urgente" src="/images/folder-plus.svg">
+				    <div class="card-footer p-0 mt-3">
+					    <a href="/cadastrar" class="btn btn-primary">
+					    	<img class="btn " alt="urgente" src="/images/folder-plus.svg">
 					    	<span>Cadastrar tarefa</span> 
 					    </a>
 				    </div>

@@ -1,5 +1,6 @@
 package com.tsswebapps.todolist.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,15 @@ public class TodoService {
 	private TodoRepository repository;
 	
 	public List<Todo> listarTodosPorCategoria(Categorias categoria) {
-		return null;
+		return repository.findByCategoria(categoria);
 	}
 	
 	public Todo salvar(Todo todo) {
 		return repository.save(todo);
+	}
+	
+	public List<Todo> todosByDay(LocalDate day){
+		return repository.findByDataHoraMarcada(day);
 	}
 	
 }

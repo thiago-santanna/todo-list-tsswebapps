@@ -22,7 +22,7 @@
 	            </a>
 			</div>
 			<div class="card-body">
-				<form th:object="${todo}" th:action="@{/todo/salvar}" method="post">
+				<form th:object="${todo}" th:action="@{/salvar}" method="post">
 					<div class="mb-3 form-group">
 						<label class="form-label" for="descricao">Descrição</label> 
 						<input class="form-control" th:filed=*{descricao} type="text" id="descricao" name="descricao">
