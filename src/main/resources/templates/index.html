@@ -11,101 +11,141 @@
 </head>
 <body>
 	<main class="container">
-		<div class="content h-100 mt-4">
-			<aside class="categories">
-				<nav class="d-flex flex-column">
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Meu dia</span>
-					  	<span>10</span>
-					</div>
-					
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Urgente</span>
-					  	<span>10</span>
-					</div>
-					
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Terefa</span>
-					  	<span>10</span>
-					</div>
-					
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Lazer</span>
-					  	<span>10</span>
-					</div>
-					
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Família</span>
-					  	<span>10</span>
-					</div>
-					
-					<div class="nav-link d-flex justify-content-between gap-3">
-						<img alt="icone" src="#">
-					  	<span>Trabalho</span>
-					  	<span>10</span>
-					</div>						
-				</nav>
-			</aside>
-			
-			<div class="card">
-				<div class="card-header d-flex justify-content-between align-items-center">
-					<span class="text-primary">Resumo</span>
-				</div>
-				
-				<section class="todo-detail col-sm-9">
-				<div class="d-flex flex-column gap-4">
-					<section class="todo-title mb-4">
-						<div class="d-flex flex-column">
-							<span>Meu dia</span>
-							<span>Segunda-feira, Fevereiro 28</span>
-						</div>
-					</section>
-					<section class="todo-resume">
-						<div class="row align-items-center">
-							<input class="col-md-1" type="checkbox" >
-							<div class="col-sm-11">
-								<span>Titulo todo</span>
-								<p>Descricao do todo</p>
-							</div>
-						</div>
-						
-						<div class="row align-items-center">
-							<input class="col-sm-1" type="checkbox" >
-							<div class="col-sm-11">
-								<span>Titulo todo</span>
-								<p>Descricao do todo</p>
-							</div>
-						</div>
-						
-						<div class="row align-items-center">
-							<input class="col-sm-1" type="checkbox" >
-							<div class="col-sm-11">
-								<span>Titulo todo</span>
-								<p>Descricao do todo</p>
-							</div>
-						</div>
-						
-						<div class="row align-items-center">
-							<input class="col-sm-1" type="checkbox" >
-							<div class="col-sm-11">
-								<span>Titulo todo</span>
-								<p>Descricao do todo</p>
-							</div>
-						</div>
-					</section>
-					
-					<span>+ Adicionar uma tarefa</span>
+		<div class="row content">
+			<section class="col-12 col-sm-4">
+				<div class="list-group gap-2">
+				  <a href="/todo/category/todas" class="list-group-item list-group-item-action active" aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Meu dia</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/sun.svg">
+				    </div>
+				    <p class="mb-1">Tarefas do dia</p>
+				  </a>
+				  
+				  <a href="/todo/category/urgente" class="list-group-item list-group-item-action" aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Urgente</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/patch-exclamation.svg">
+				    </div>
+				    <p class="mb-1">Consulta médica, comprar remédios...</p>
+				  </a>				  
+				  
+				  <a href="/todo/category/tarefa" class="list-group-item list-group-item-action " aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Tarefa</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/card-checklist.svg">
+				    </div>
+				    <p class="mb-1">(Jogar lixo fora, sair com o pet...).</p>
+				  </a>
+				  
+				  <a href="/todo/category/lazer" class="list-group-item list-group-item-action " aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Lazer</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/controller.svg">
+				    </div>
+				    <p class="mb-1">Jogar CS, Praia, Show...</p>
+				  </a>
+				  
+				  <a href="/todo/category/familia" class="list-group-item list-group-item-action " aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Família</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/chat-square-heart.svg">
+				    </div>
+				    <p class="mb-1">Almoço na sogra, Parque com as crianças...</p>
+				  </a>
+				  
+				  <a href="/todo/category/trabalho" class="list-group-item list-group-item-action " aria-current="true">
+				    <div class="d-flex w-100 justify-content-between">
+				      <h5 class="mb-1">Trabalho</h5>
+				      <img class="img-thumbnail" alt="urgente" src="/images/cash-coin.svg">
+				    </div>
+				    <p class="mb-1">Entregar, Reunião, Ligar pro líder...</p>
+				  </a>
 				</div>
 			</section>
-			</div>
-			
-			
-			
+			<section class="col-12 col-sm-8">
+				<div class="card">
+				  <div class="card-header p-3 bg-primary text-light d-flex justify-content-between align-items-center">
+				    <h4>Nome Categoria selecionada</h4>
+				    <h5>02/02/2022</h5>
+				  </div>
+				  <div class="card-body">
+				    <div class="d-flex flex-wrap justify-content-between bg-secondary p-3 rounded bg-opacity-25">
+				    	<input type="text" placeholder="Descrição">
+				    	<input type="date">
+						<select name="categoria" id="categoria">
+							<option selected>Situação</option>
+							<option value="PENDENTE">Pendente</option>
+							<option value="FINALIZADO">Finalizado</option>
+						</select>				    	
+				    	<a href="todo/cadastrar" class="btn">
+					    	<img alt="urgente" src="/images/search.svg"> 
+					    </a>
+				    </div>
+				    <table class="table table-hover  table-responsive">
+						<thead>
+						    <tr>
+						      <th scope="col">ID</th>
+						      <th scope="col">Descrição</th>
+						      <th scope="col">Data</th>
+						      <th scope="col">Situação</th>
+						      <th scope="col">#</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						    <tr>
+							  <th scope="row">2</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						    <tr>
+							  <th scope="row">2</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Descrição 1</td>
+						      <td>2/2/2022</td>
+						      <td>Pendente</td>
+						      <td> <span>Edit</span><span>Erase</span> </td>
+						    </tr>
+						  </tbody>					  
+					</table>
+				    <div class="card-footer p-0">
+					    <a href="todo/cadastrar" class="btn btn-primary">
+					    	<img class="img-thumbnail " alt="urgente" src="/images/folder-plus.svg">
+					    	<span>Cadastrar tarefa</span> 
+					    </a>
+				    </div>
+				  </div>
+				</div>
+			</section>
 		</div>	 	
 	</main>
 	

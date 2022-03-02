@@ -28,13 +28,15 @@ public class TodoController {
 	}
 	
 	@GetMapping("/cadastrar")
-	public ModelAndView cadastrar() {	
+	public ModelAndView cadastrar() {
 		ModelAndView mv = new ModelAndView("cadastro");
+		Todo todo = new Todo();
+		mv.addObject("todo", todo);
 		return mv;
 	}
 	
 	@PostMapping("/salvar")
-	public ModelAndView cadastrar(FormTodoDto dtoTodo) {
+	public String cadastrar(FormTodoDto dtoTodo) {
 		
 		System.out.println(dtoTodo);
 		
@@ -47,6 +49,6 @@ public class TodoController {
 		Todo todo = dtoTodo.toTodo();
 		service.salvar(todo);
 		
-		return new ModelAndView("index");
+		return "redirect:/todo/cadastrar";
 	}
 }

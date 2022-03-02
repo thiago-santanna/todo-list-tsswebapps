@@ -15,3 +15,7 @@ body {
 .card {
 	border-radius: 1rem;
 }
+
+.content {
+	margin-top: 5rem;
+}
