@@ -11,6 +11,14 @@
 </head>
 <body>
 	<main class="container-fluid">
+	
+		<div th:if="${!#strings.isEmpty(mensagem)}"
+			class="col-sm-8 alert alert-success alert-dismissible fade show" role="alert">
+			<strong>Sucesso! </strong><span th:text="${mensagem}">mensagem</span>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			</button>
+		</div>	
+		
 		<div class="card col-sm-8">
 			<div class="card-header d-flex justify-content-between align-items-center">
 				<span class="text-primary">Cadastre sua tarefa</span>

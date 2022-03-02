@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tsswebapps.todolist.dto.FormTodoDto;
 import com.tsswebapps.todolist.model.Categorias;
@@ -32,7 +33,6 @@ public class TodoController {
 		
 		List<Todo> selecaoTodos = service.todosByDay(LocalDate.now());
 		mv.addObject("selecaoTodos", selecaoTodos);
-
 		return mv;
 	}
 
@@ -45,11 +45,11 @@ public class TodoController {
 	}
 
 	@PostMapping("/salvar")
-	public String cadastrar(FormTodoDto dtoTodo) {
+	public String cadastrar(FormTodoDto dtoTodo, RedirectAttributes attributes) {
 		System.out.println(dtoTodo);
 		Todo todo = dtoTodo.toTodo();
 		service.salvar(todo);
-
+		attributes.addFlashAttribute("mensagem", "Sua nova tarefa foi salva.");
 		return "redirect:/cadastrar";
 	}
 
