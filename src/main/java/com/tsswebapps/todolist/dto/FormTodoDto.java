@@ -3,12 +3,10 @@ package com.tsswebapps.todolist.dto;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.tsswebapps.todolist.model.Categorias;
+import com.tsswebapps.todolist.model.Situacao;
 import com.tsswebapps.todolist.model.Todo;
 
 public class FormTodoDto {
@@ -28,7 +26,7 @@ public class FormTodoDto {
 		todo.setDescricao(this.descricao);
 		todo.setDataHoraMarcada(this.dataHoraMarcada);
 		todo.setCategoria(this.categoria);
-		
+		todo.setSituacao(Situacao.PENDENTE);
 		return todo;
 	}
 
@@ -38,6 +36,14 @@ public class FormTodoDto {
 
 	public void setDataHoraMarcada(LocalDate dataHoraMarcada) {
 		this.dataHoraMarcada = dataHoraMarcada;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public Categorias getCategoria() {

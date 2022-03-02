@@ -1,15 +1,13 @@
 package com.tsswebapps.todolist.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tsswebapps.todolist.dto.FormTodoDto;
+import com.tsswebapps.todolist.model.Situacao;
 import com.tsswebapps.todolist.model.Todo;
 import com.tsswebapps.todolist.service.TodoService;
 
