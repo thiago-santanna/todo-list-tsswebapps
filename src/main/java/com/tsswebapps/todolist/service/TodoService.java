@@ -36,4 +36,8 @@ public class TodoService {
 		repository.deleteById(id);
 	}
 	
+	public void finalizaTodo(Long id) {
+		
+	}
+	
 }

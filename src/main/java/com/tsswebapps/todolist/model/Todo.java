@@ -24,7 +24,7 @@ public class Todo {
 	@Column(length = 100)
 	private String descricao;
 	
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private LocalDate dataHoraMarcada;
 	
 	@Enumerated(EnumType.STRING)

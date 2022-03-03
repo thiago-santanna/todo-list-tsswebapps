@@ -1,10 +1,12 @@
 package com.tsswebapps.todolist.controller;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,35 +21,42 @@ import com.tsswebapps.todolist.service.TodoService;
 @Controller
 @RequestMapping("/")
 public class TodoController {
+	
+	private final String CADASTRO = "cadastro";
 
 	private TodoService service;
 
 	public TodoController(TodoService todoService) {
 		this.service = todoService;
 	}
+	
+    @ModelAttribute("todasCategorias")
+    public List<Categorias> todasCategorias(){
+    	return Arrays.asList(Categorias.values());
+    }
 
 	@GetMapping()
 	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView("index");
-		System.out.println("teste 1");
-		
+		ModelAndView mv = new ModelAndView("index");		
 		List<Todo> selecaoTodos = service.todosByDay(LocalDate.now());
+		mv.addObject("localDate", LocalDate.now());
 		mv.addObject("selecaoTodos", selecaoTodos);
 		return mv;
 	}
 
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastrar() {
-		ModelAndView mv = new ModelAndView("cadastro");
+		ModelAndView mv = new ModelAndView(CADASTRO);
 		Todo todo = new Todo();
 		mv.addObject("todo", todo);
+		
 		return mv;
 	}
 
 	@PostMapping("/salvar")
 	public String cadastrar(FormTodoDto dtoTodo, RedirectAttributes attributes) {
-		System.out.println(dtoTodo);
 		Todo todo = dtoTodo.toTodo();
+		System.out.println(todo);
 		service.salvar(todo);
 		attributes.addFlashAttribute("mensagem", "Sua nova tarefa foi salva.");
 		return "redirect:/cadastrar";
@@ -55,20 +64,27 @@ public class TodoController {
 
 	@GetMapping("/category/{categoria}") 
 	public ModelAndView findByCategoria(@PathVariable String categoria) {	  
-	  List<Todo> selecaoTodos = service.listarTodosPorCategoria(Categorias.valueOf(categoria.toUpperCase()));	  
+	  List<Todo> selecaoTodos = service.listarTodosPorCategoria(Categorias.valueOf(categoria.toUpperCase()));  
 	  ModelAndView mv = new ModelAndView("index"); 	  
 	  mv.addObject("selecaoTodos", selecaoTodos);
-	  System.out.println("teste 2");
 	  return mv;
 	}
 	
 	@GetMapping("/altera/{id}") 
-	public ModelAndView findByCategoria(@PathVariable Long id) {	  
+	public ModelAndView alterar(@PathVariable Long id) {	  
 	  Todo todo = service.findBiId(id);
 	  System.out.println(todo);	  
-	  ModelAndView mv = new ModelAndView("cadastro");
+	  ModelAndView mv = new ModelAndView(CADASTRO);
 	  mv.addObject("todo", todo);
 	  return mv;
+	}
+	
+	@GetMapping("/finaliza/{id}")
+	public ModelAndView finalizar(@PathVariable Long id) {
+		  Todo todo = service.findBiId(id);	  
+		  ModelAndView mv = new ModelAndView(CADASTRO);
+		  mv.addObject("todo", todo);
+		  return mv;
 	}
 
 }

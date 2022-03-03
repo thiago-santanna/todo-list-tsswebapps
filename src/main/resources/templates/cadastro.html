@@ -24,6 +24,9 @@
 			</div>
 			<div class="card-body">
 				<form th:object="${todo}" th:action="@{/salvar}" method="post">
+					<div>
+						<input hidden class="form-control" th:field=*{id} type="text" id="id">
+					</div>
 					<div class="mb-3 form-group">
 						<label class="form-label" for="descricao">Descrição</label> 
 						<input class="form-control" th:field=*{descricao} type="text" id="descricao">
@@ -34,7 +37,7 @@
 		
 					<div class="mb-3 form-group">
 						<label for="dataHoraMarcada" class="form-label">Data da tarefa</label> 
-						<input class="form-control" th:field="*{dataHoraMarcada}" type="date" id="inputData">
+						<input th:value="${#temporals.format(dataHoraMarcada, 'dd/MM/yyyy')}" placeholder="DD/MM/YYYY" class="form-control" th:field=*{dataHoraMarcada} type="text" id="dataHoraMarcada">
 						<div id="dataHoraMarcada" class="form-text">Digite uma data para
 							esse evento.</div>
 					</div>
@@ -42,12 +45,8 @@
 					<div class="mb-3 form-group">
 						<label for="categoria" class="form-label">Categoria</label> 
 						<select class="form-select" name="categoria" id="categoria">
-							<option selected>Abra e selecione uma opção</option>
-							<option value="URGENTE">Urgente</option>
-							<option value="TAREFA">Tarefa</option>
-							<option value="FAMILIA">Família</option>
-							<option value="LAZER">Lazer</option>
-							<option value="TRABALHO">Trabalho</option>
+							<option th:each="cat : ${todasCategorias}" th:value="${cat}" th:text="${cat.getDescricao()}"></option>
+
 						</select>
 					</div>
 					
