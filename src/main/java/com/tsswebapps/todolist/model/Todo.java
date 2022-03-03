@@ -32,6 +32,10 @@ public class Todo {
 	
 	@Enumerated(EnumType.STRING)
 	private Situacao situacao;
+	
+	public boolean isPendente() {
+		return Situacao.PENDENTE.equals(this.situacao);
+	}
 
 	public Long getId() {
 		return id;

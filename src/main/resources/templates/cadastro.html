@@ -11,13 +11,6 @@
 </head>
 <body>
 	<main class="container-fluid">
-	
-		<div th:if="${!#strings.isEmpty(mensagem)}"
-			class="col-sm-8 alert alert-success alert-dismissible fade show" role="alert">
-			<strong>Sucesso! </strong><span th:text="${mensagem}">mensagem</span>
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-			</button>
-		</div>	
 		
 		<div class="card col-sm-8">
 			<div class="card-header d-flex justify-content-between align-items-center">
@@ -33,7 +26,7 @@
 				<form th:object="${todo}" th:action="@{/salvar}" method="post">
 					<div class="mb-3 form-group">
 						<label class="form-label" for="descricao">Descrição</label> 
-						<input class="form-control" th:filed=*{descricao} type="text" id="descricao" name="descricao">
+						<input class="form-control" th:field=*{descricao} type="text" id="descricao">
 						<div class="form-text" id="emailHelp">
 							Digite uma descrição de	sua tarefa/compromisso.
 						</div>
@@ -41,7 +34,7 @@
 		
 					<div class="mb-3 form-group">
 						<label for="dataHoraMarcada" class="form-label">Data da tarefa</label> 
-						<input class="form-control" th:field="*{dataHoraMarcada}" type="date" id="inputData" name="dataHoraMarcada">
+						<input class="form-control" th:field="*{dataHoraMarcada}" type="date" id="inputData">
 						<div id="dataHoraMarcada" class="form-text">Digite uma data para
 							esse evento.</div>
 					</div>
@@ -66,6 +59,12 @@
 				</form>		
 			</div>
 		</div>
+		
+		<div th:if="${!#strings.isEmpty(mensagem)}"	class="col-sm-8 alert alert-success alert-dismissible fade show" role="alert">
+			<strong>Sucesso! </strong><span th:text="${mensagem}">mensagem</span>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			</button>
+		</div>	
 
 	</main>
 

@@ -16,6 +16,10 @@ public class TodoService {
 	@Autowired
 	private TodoRepository repository;
 	
+	public Todo findBiId(Long id) {
+		return repository.findById(id).get();
+	}
+	
 	public List<Todo> listarTodosPorCategoria(Categorias categoria) {
 		return repository.findByCategoria(categoria);
 	}
@@ -26,6 +30,10 @@ public class TodoService {
 	
 	public List<Todo> todosByDay(LocalDate day){
 		return repository.findByDataHoraMarcada(day);
+	}
+	
+	public void apagar(Long id) {
+		repository.deleteById(id);
 	}
 	
 }

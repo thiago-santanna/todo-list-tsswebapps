@@ -82,23 +82,44 @@
 					    	<img alt="urgente" src="/images/search.svg"> 
 					    </a>
 				    </div>
-				    <table class="table table-hover  table-responsive" th:unless="${#lists.isEmpty(selecaoTodos)}">
+				    <table class="table table-hover table-responsive" th:unless="${#lists.isEmpty(selecaoTodos)}">
 						<thead>
 						    <tr>
-						      <th scope="col">#</th>
+						      <th class="text-center" scope="col">#</th>
 						      <th scope="col">Descrição</th>
-						      <th scope="col">Data</th>
-						      <th scope="col">Situação</th>
-						      <th scope="col"></th>
+						      <th class="text-center" scope="col">Data</th>
+						      <th class="text-center" scope="col">Categoria</th>
+						      <th class="text-center" scope="col">Situação</th>
+						      <th class="text-center" scope="col"></th>
 						    </tr>
 						  </thead>
 						  <tbody>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Descrição 1</td>
-						      <td>2/2/2022</td>
-						      <td>Pendente</td>
-						      <td> <span>Edit</span><span>Erase</span> </td>
+						    <tr th:each="todo : ${selecaoTodos}">
+						      <th class="text-center" scope="row" th:text="${todo.id}">1</th>
+						      <td th:text="${todo.descricao}">Descrição 1</td>
+						      <td th:text="${{todo.dataHoraMarcada}}" class="text-center">2/2/2022</td>
+						      <td class="text-center" th:text="${todo.categoria.getDescricao()}">TODOS</td>						      
+						      <td class="text-center">
+						        <span class="badge" th:text="${todo.situacao}"
+						        th:classappend="${todo.isPendente() ? 'bg-danger' : 'bg-success'}">Pendente</span>
+						      </td>
+						      <td class="text-center ">
+						      	<a th:href="@{/finaliza/{id}(id=${todo.id})}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+									  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+									</svg>
+						      	</a> 
+						      	<a th:href="@{/altera/{id}(id=${todo.id})}">
+						      		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+									  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+									</svg>
+						      	</a>
+						      	<a th:href="@{/apaga/{id}(id=${todo.id})}">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser-fill" viewBox="0 0 16 16">
+									  <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm.66 11.34L3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"/>
+									</svg>
+						      	</a>
+						      </td>
 						    </tr>
 						   
 						  </tbody>					  

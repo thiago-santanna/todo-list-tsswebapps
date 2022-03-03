@@ -61,5 +61,14 @@ public class TodoController {
 	  System.out.println("teste 2");
 	  return mv;
 	}
+	
+	@GetMapping("/altera/{id}") 
+	public ModelAndView findByCategoria(@PathVariable Long id) {	  
+	  Todo todo = service.findBiId(id);
+	  System.out.println(todo);	  
+	  ModelAndView mv = new ModelAndView("cadastro");
+	  mv.addObject("todo", todo);
+	  return mv;
+	}
 
 }
