@@ -70,18 +70,7 @@
 				    <h5 th:text="${#temporals.format(localDate, 'dd/MM/yyyy')}">02/02/2022</h5>
 				  </div>
 				  <div class="card-body" >
-				    <div class="d-flex flex-wrap justify-content-between bg-secondary p-3 rounded bg-opacity-25">
-				    	<input type="text" placeholder="Descrição">
-				    	<input th:value="${#temporals.format(localDate, 'dd/MM/yyyy')}" type="text">
-						<select name="categoria" id="categoria">
-							<option selected>Situação</option>
-							<option value="PENDENTE">Pendente</option>
-							<option value="FINALIZADO">Finalizado</option>
-						</select>				    	
-				    	<a href="todo/cadastrar" class="btn">
-					    	<img alt="urgente" src="/images/search.svg"> 
-					    </a>
-				    </div>
+
 				    <div class="table-responsive">
 						<table class="table table-hover" th:unless="${#lists.isEmpty(selecaoTodos)}">
 							<thead>
@@ -91,7 +80,7 @@
 							      <th class="text-center col-md-2" scope="col">Data</th>
 							      <th class="text-center col-md-2" scope="col">Categoria</th>
 							      <th class="text-center col-md-2" scope="col">Situação</th>
-							      <th class="text-center col-md-2" scope="col"></th>
+							      <th class="text-center col-md-2" scope="col">A</th>
 							    </tr>
 							  </thead>
 							  <tbody>

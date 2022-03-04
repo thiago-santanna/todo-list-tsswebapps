@@ -43,13 +43,11 @@ public class TodoController {
 		mv.addObject("selecaoTodos", selecaoTodos);
 		return mv;
 	}
-
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastrar() {
 		ModelAndView mv = new ModelAndView(CADASTRO);
 		Todo todo = new Todo();
-		mv.addObject("todo", todo);
-		
+		mv.addObject("todo", todo);		
 		return mv;
 	}
 
@@ -72,11 +70,16 @@ public class TodoController {
 	
 	@GetMapping("/altera/{id}") 
 	public ModelAndView alterar(@PathVariable Long id) {	  
-	  Todo todo = service.findBiId(id);
-	  System.out.println(todo);	  
+	  Todo todo = service.findBiId(id); 
 	  ModelAndView mv = new ModelAndView(CADASTRO);
 	  mv.addObject("todo", todo);
 	  return mv;
+	}
+	
+	@GetMapping("/apaga/{id}") 
+	public String apagar(@PathVariable Long id) {	  
+	  service.apagar(id);  
+	  return "redirect:/";
 	}
 	
 	@GetMapping("/finaliza/{id}")
