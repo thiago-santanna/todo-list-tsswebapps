@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tsswebapps.todolist.model.Categorias;
+import com.tsswebapps.todolist.model.Situacao;
 import com.tsswebapps.todolist.model.Todo;
 import com.tsswebapps.todolist.repository.TodoRepository;
 
@@ -36,8 +37,10 @@ public class TodoService {
 		repository.deleteById(id);
 	}
 	
-	public void finalizaTodo(Long id) {
-		
+	public Todo finalizaTodo(Long id) {
+		Todo todo = repository.findById(id).get();
+		todo.setSituacao(Situacao.FINALIZADO);
+		return todo;
 	}
 	
 }

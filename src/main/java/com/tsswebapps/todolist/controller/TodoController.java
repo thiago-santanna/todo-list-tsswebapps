@@ -54,7 +54,7 @@ public class TodoController {
 	@PostMapping("/salvar")
 	public String cadastrar(FormTodoDto dtoTodo, RedirectAttributes attributes) {
 		Todo todo = dtoTodo.toTodo();
-		System.out.println(todo);
+
 		service.salvar(todo);
 		attributes.addFlashAttribute("mensagem", "Sua nova tarefa foi salva.");
 		return "redirect:/cadastrar";
@@ -83,11 +83,10 @@ public class TodoController {
 	}
 	
 	@GetMapping("/finaliza/{id}")
-	public ModelAndView finalizar(@PathVariable Long id) {
-		  Todo todo = service.findBiId(id);	  
-		  ModelAndView mv = new ModelAndView(CADASTRO);
-		  mv.addObject("todo", todo);
-		  return mv;
+	public String finalizar(@PathVariable Long id) {
+		Todo todo = service.finalizaTodo(id);
+		service.salvar(todo);
+		return "redirect:/";
 	}
 
 }
